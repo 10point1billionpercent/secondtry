@@ -63,33 +63,6 @@
 function closeModal(id) {
   document.getElementById(id).style.display = "none";
 }
-
-document.getElementById('fileUpload').addEventListener('change', function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  const formData = new FormData();
-  formData.append('fileUpload', file); // this name should match your Flask endpoint
-
-  fetch('http://127.0.0.1:5000/upload', {
-      method: 'POST',
-      body: formData
-  })
-  .then(response => {
-    if (response.ok) {
-      openModal('successModal');
-    } else {
-      return response.text().then(msg => {
-        document.getElementById('errorMessage').textContent = msg;
-        openModal('errorModal');
-      });
-    }
-  })
-  .catch(error => {
-    document.getElementById('errorMessage').textContent = "Upload failed: " + error;
-    openModal('errorModal');
-  });
-});
 </script>
 </body>
 </html>
