@@ -4,7 +4,7 @@
     <title>Varunet - Start Ocean Scan </title>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
 
 
 
@@ -14,17 +14,18 @@
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
 <spline-viewer url="https://prod.spline.design/nwcObotJIlEfARMC/scene.splinecode"></spline-viewer>
         <div class="fg">
-            <nav class="navbar"> 
+           <nav class="navbar"> 
             <div class="lol">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo"></img>        
+            <img src="logo.png" class="logo"></img>        
             <a class="title">Varunet</a>
             </div>
             <ul class="nav-links">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('history') }}">History</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-            </ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="history.html">History</a></li>
+              <li><a href="about.html">About</a></li>
+          </ul>
           </nav>
+        
         
      <h1> Start Ocean Scan </h1>
      <a class="microcopy">AI powered ocean image scanning <br> for oil spill detection.</a>
@@ -38,14 +39,14 @@
     <div id="successModal" class="modal">
       <div class="modal-content">
         <label onclick="closeModal('successModal')" style="align-self: flex-end; margin-bottom: 20px;">✕</label>
-        <img class="modal-image" src="{{ url_for('static', filename='images/upload_success.png') }}">
+        <img class="modal-image" src="upload_success.png">
         <p>Image upload successful!</p>
       </div>
     </div>
     <div id="errorModal" class="modal">
       <div class="modal-content">
         <label onclick="closeModal('errorModal')" style="align-self: flex-end; margin-bottom: 20px;">✕</label>
-        <img class="modal-image" src="{{ url_for('static', filename='images/upload_fail.png') }}">
+        <img class="modal-image" src="upload_fail.png">
         <p id="errorMessage">Something went wrong.</p>
         <p id="errorMessage">Please try again.</p>
       </div>
